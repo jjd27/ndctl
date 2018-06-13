@@ -22,6 +22,7 @@
 #include <ndctl/libndctl.h>
 #include <util/parse-options.h>
 #include <ccan/array_size/array_size.h>
+#include <util/log.h>
 
 #include <ndctl.h>
 
@@ -453,6 +454,8 @@ int cmd_list(int argc, const char **argv, void *ctx)
 	struct util_filter_ctx fctx = { 0 };
 	struct list_filter_arg lfa = { 0 };
 	int i, rc;
+
+	ndctl_set_log_priority(ctx, LOG_DEBUG);
 
         argc = parse_options(argc, argv, options, u, 0);
 	for (i = 0; i < argc; i++)

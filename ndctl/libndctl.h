@@ -23,7 +23,9 @@
 #ifdef HAVE_LIBUUID
 #include <uuid/uuid.h>
 #else
+#ifndef DEFINED_UUID_T
 typedef unsigned char uuid_t[16];
+#endif
 #endif
 
 /*

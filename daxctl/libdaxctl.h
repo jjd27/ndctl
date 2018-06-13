@@ -19,7 +19,8 @@
 #ifdef HAVE_LIBUUID
 #include <uuid/uuid.h>
 #else
-typedef unsigned char uuid_t[16];
+#include <uuid/uuid.h>
+//typedef unsigned char uuid_t[16];
 #endif
 
 #ifdef __cplusplus
